@@ -37,6 +37,7 @@ export class ActionController extends DoingBaseController {
   public async delete(@requestParam("id") id: string, req: express.Request<{}, {}, null>, res: express.Response): Promise<interfaces.IHttpActionResult> {
     return this.actionWrapper(req, res, async (au) => {
       await this.repositories.action.delete(au.churchId, id);
+      return this.json({});
     });
   }
 

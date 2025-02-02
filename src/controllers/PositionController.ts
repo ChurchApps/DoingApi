@@ -55,6 +55,7 @@ export class PositionController extends DoingBaseController {
   public async delete(@requestParam("id") id: string, req: express.Request<{}, {}, null>, res: express.Response): Promise<interfaces.IHttpActionResult> {
     return this.actionWrapper(req, res, async (au) => {
       await this.repositories.position.delete(au.churchId, id);
+      return this.json({});
     });
   }
 

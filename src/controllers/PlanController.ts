@@ -106,6 +106,7 @@ export class PlanController extends DoingBaseController {
       await this.repositories.assignment.deleteByPlanId(au.churchId, id);
       await this.repositories.position.deleteByPlanId(au.churchId, id);
       await this.repositories.plan.delete(au.churchId, id);
+      return this.json({});
     });
   }
 
